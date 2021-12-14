@@ -1,0 +1,801 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+   
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="./index.css"></link>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <title>Hello, world!</title>
+  </head>
+  <body>
+    <div class="container tab mb-5 text12">
+        <h3 class="my-5 font-weight-bold">Student Application Form</h3>
+        <div class="row">
+            <div class="col-md-10">
+                <div class=" d-flex justify-content-center">
+                    <div class="col text-center tab-line-active">
+                        <img src="" class="icon-tab">
+                        <p class="tab_label">Admission</p>
+                    </div>
+                    <div class="col text-center tab-line">
+                        <img src="" class="icon-tab">
+                        <p class="tab_label">Personal Information</p>
+                    </div>
+                    <div class="col text-center tab-line">
+                        <img src="" class="icon-tab">
+                        <p class="tab_label">Educational Background</p>
+                    </div>
+                    <div class="col text-center tab-line">
+                        <img src="" class="icon-tab">
+                        <p class="tab_label">Confirmation</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- html 2 -->
+    <div class="container">
+        <div class="row">
+            <p class="">Admission Information</p>
+        </div>
+        <div class= "row">
+            <p class="text12">Please identify first what Academic Department you want to be admitted. Program and Curriculum options will change depends on what acedmic department you choose.</p>
+        </div>
+        <p class="text-10 text-red">*Required fields</p>
+        <div class="row px-0">
+            <div class="col-md-4 text12 p-0">
+                <label class="inputLabel mb-0 p-0" for="psSchoolName">Student Type<span class="text-red"> *</span></label>
+                <input class="longInput form-control mb-2 form-control-sm border bg-white rounded-0 border-secondary"  type="text" placeholder="Freshmen" disabled></input>
+                <label class="mb-0 p-0" for="acadDept">Academic Department<span class="text-red"> *</span></label>
+                <select id="acadcDept" class="form-control text12 mb-2" aria-label="Default select example">
+                    <option value="not-selected">Select Academic Department</option>
+                    <option value="High School">High School</option>
+                    <option value="College">College</option>
+                    <option value="Graduate School">Graduate School</option>
+                </select>
+                <label class="mb-0 p-0" for="program">Program<span class="text-red"> *</span></label>
+                <select id="program_res"  class="form-control text12"  aria-label="Default select example">
+                    
+                </select>
+            </div>
+            <div class="col-md-8 text12">
+                <h6 class="font-weight-bold mb-0">Curriculum</h6>
+                <table class="table table-bordered table-striped mb-0">
+                    <thead class="">
+                        <tr>
+                            <th class="th-code">Subject Code</th>
+                            <th class="">Title</th>
+                        </tr>
+                    </thead>
+                </table>
+                <div class="table-wrapper-scroll-y my-custom-scrollbar">
+                    <table class="table table-bordered table-striped mb-0">
+                        <tbody class="table-body">
+                        
+                        </tbody>
+                    </table>
+                </div>
+                <div class="d-flex sm-button justify-content-center">
+                    <div id="back_to_step1" class="back cursor-pointer border boder-0 mx-2 py-1 px-3">Back</div>
+                    <div id="show-button" class=" sm-show-button continue cursor-pointer border btn-primary boder-0 mr-2 py-1 px-3">Continue</div>
+                    <div id="hide-button" class=" sm-hide-buttoncursor-not-allowed border btn-secondary boder-0 mr-2 py-1 px-3">Continue</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- //2 -->
+    <div class="container tab mb-5 text12">
+        <h3 class="my-5 font-weight-bold">Student Application Form</h3>
+        <div class="row">
+            <div class="col-md-10">
+                <div class=" d-flex justify-content-center">
+                    <div class="col text-center tab-line-done" id="back_to_admission">
+                        <img src="" class="icon-tab">
+                        <p class="tab_label">Admission</p>
+                    </div>
+                    <div class="col text-center tab-line-active">
+                        <img src="" class="icon-tab">
+                        <p class="tab_label">Personal Information</p>
+                    </div>
+                    <div class="col text-center tab-line">
+                        <img src="" class="icon-tab">
+                        <p class="tab_label">Educational Background</p>
+                    </div>
+                    <div class="col text-center tab-line">
+                        <img src="" class="icon-tab">
+                        <p class="tab_label">Confirmation</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+     
+    <!-- const header -->
+    <div class="container my-5">
+        <h3>Personal Information</h3>
+        <p class="text-red text-10">*Required fields</p>
+    </div>
+    <!-- const student_name1  -->
+    <div class="container text12">
+        <form>
+            <h6 class="col-12 p-0 font-weight-bold mb-2">Student Name</h6>
+            <div class="form-row text12">
+                <div class="form-group col-md-3 c-mb-sm-1 ">
+                    <label for="last_name" >Last Name<span class="text-red"> *</span></label>
+                    <input type="text" class="check_value form-control form-control-sm border bg-white rounded-0 border-dark" id="last_name" placeholder="Enter Last Name">
+                </div>
+                <div class="form-group col-md-3 c-mb-sm-1">
+                    <label for="first_name">First Name<span class="text-red"> *</span></label>
+                    <input type="text" class="check_value form-control form-control-sm border bg-white rounded-0 border-dark" id="first_name" placeholder="Enter First Name">
+                </div>
+                <div class="form-group col-md-3 c-mb-sm-1">
+                    <label for="middle_name">Middle Name<span class="text-red"> *</span></label>
+                    <input type="text" class="check_value form-control form-control-sm border bg-white rounded-0 border-dark" id="middle_name" placeholder="Enter Middle Name">
+                </div>
+                <div class="form-group col-md-2 mb-0">
+                    <label for="suffix" class="col-12 p-0">Suffix <span class="text-red"> *</span></label>
+                    <select id="name_suffix" class="form-control text12">
+                        <option value="none" selected>None</option>
+                        <option vlaue="Jr">Jr</option>
+                        <option value="Sr">Sr</option>
+                    </select>
+                </div>
+            </div>
+        </form>
+    </div>
+    <!-- const personal_information2 -->
+    <div class="container text12">
+        <form>
+            <h6 class="col-12 p-0 font-weight-bold mb-2">Personal Information</h6>
+            <div class="form-row">
+                <div class="form-group col-md-3 c-mb-sm-1">
+                    <label for="gender" class="col-12 p-0">Gender <span class="text-red"> *</span></label>
+                    <select id="gender" class="form-control text12">
+                        <option vlaue="Male" selected>Male</option>
+                        <option value="Female">Female</option>
+                    </select>
+                </div>
+                <div class="form-group col-md-3 c-mb-sm-1">
+                    <label for="birthday">Birthday <span class="text-red"> *</span></label>
+                    <input type="date" id="birthday" class="form-control form-control-sm border bg-white rounded-0 border-dark" id="birthday" placeholder="Enter Birthday">
+                </div>
+                <div class="form-group col-md-3 c-mb-sm-1">
+                    <label for="age_as">Age as of the 1st Friday of June <span class="text-red"> *</span></label>
+                    <input type="number" id="age_as" class="check_value form-control form-control-sm border bg-white rounded-0 border-dark" >
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group col-md-3 c-mb-sm-1">
+                    <label for="mother_tongue">Mother Tongue <span class="text-red"> *</span></label>
+                    <input type="text" id="mother_tongue" class="check_value form-control form-control-sm border bg-white rounded-0 border-dark"  placeholder="Ex: Tagalog">
+                </div>
+                <div class="form-group col-md-3 c-mb-sm-1">
+                    <label for="ethnic" class="col-12 p-0">IP (Ethnic Group) <span class="text-red"> *</span></label>
+                    <select id="ethnic" class="form-control text12"
+                        <option value="" selected>Select Ethnic Group</option>
+                        <option value="Tagalog">Tagalog</option>
+                        <option value="Ilokano">Ilokano</option>
+                        <option value="Kapampangan">Kapampangan</option>
+                        <option value="Bikolano">Bikolano</option>
+                    </select>
+                </div>
+                <div class="form-group col-md-3 ">
+                    <label for="religion" class="col-12 p-0">Religion <span class="text-red"> *</span></label>
+                    <select id="religion" class="form-control text12">
+                        <option value="" selected>Select Religion</option>
+                        <option value="None">None</option>
+                        <option value="Aglipay">Aglipay</option>
+                        <option value="Bible Christian">Bible Christian</option>
+                        <option value="Assemblies of God">Assemblies of God</option>
+                    </select>
+                </div>
+            </div>
+        </form>
+    </div>
+            
+    <!-- const contact_information -->
+    <div class="container text12">
+        <form>
+            <h6 class="col-12 p-0 font-weight-bold mb-2">Contact Information</h6>
+            <div class="form-row">
+                <div class="form-group col-md-3 c-mb-sm-1">
+                    <label for="mobile_number">Mobile Contact Number <span class="text-red"> *</span></label>
+                    <input type="number" class="check_value form-control form-control-sm border bg-white rounded-0 border-dark" id="mobile_number" placeholder="Enter Mobile Number">
+                </div>
+                <div class="form-group col-md-3 c-mb-sm-1">
+                    <label for="home_phone">Home Phone Number<span class="text-red"> *</span></label>
+                    <input type="number" class="check_value form-control form-control-sm border bg-white rounded-0 border-dark" id="home_phone" placeholder="Enter Home Phone Number">
+                </div>
+                <div class="form-group col-md-3 ">
+                    <label for="email">Personal Email Address <span class="text-red"> *</span></label>
+                    <input type="email" class="check_value form-control form-control-sm border bg-white rounded-0 border-dark" id="email" placeholder="Enter Personal Email Address">
+                </div>
+            </div>
+        </form>
+    </div>
+
+    <!-- const home_address -->
+    <div class="container text12">
+        <form>
+            <h6 class="col-12 p-0 font-weight-bold mb-2">Home Address</h6>
+            <div class="form-row">
+                <div class="form-group col-md-9  c-mb-sm-1">
+                    <label for="address">Street Address (House No., Street, Subdivision/Village, Sitio, Purok)</label>
+                    <input type="text" class="check_value form-control form-control-sm border bg-white rounded-0 border-dark" id="address" placeholder="Ex. block 1 lot 1 1st street  ABC Subdivision">
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-3 c-mb-sm-1">
+                    <label for="barangay" class="col-12 p-0">Barangay <span class="text-red"> *</span></label>
+                    <select id="barangay" class="form-control text12">
+                        <option selected>Select Barangay</option>
+                        <option>1</option>
+                        <option>2</option>
+                        <option>2</option>
+                        <option>2</option>
+                    </select>
+                </div>
+                <div class="form-group col-md-3 c-mb-sm-1">
+                    <label for="city" class="col-12 p-0">Municipality/City <span class="text-red"> *</span></label>
+                    <select id="city" class="form-control text12">
+                        <option selected>Select Municipality/City</option>
+                        <option value="Angeles">Angeles</option>
+                        <option value="Bacolod">Bacolod</option>
+                        <option value="Baguio">Baguio</option>
+                        <option value="Butuan">Butuan</option>
+                        <option value="Cagayan de Oro">Cagayan de Oro</option>
+                        <option value="Caloocan">Caloocan</option>
+                        <option value="Angeles">Cebu City</option>
+                        <option value="Bacolod">Davao City</option>
+                    </select>
+                </div>
+                <div class="form-group col-md-3 ">
+                    <label for="province" class="col-12 p-0">Province <span class="text-red"> *</span></label>
+                    <select id="province" class="form-control text12">
+                        <option selected>Select Province</option>
+                        <option value="Abra">Abra</option>
+                        <option value="Agusan del Norte">Agusan del Norte</option>
+                        <option value="Agusan del Sur">Agusan del Sur</option>
+                        <option value="Aklan">Aklan</option>
+                        <option value="Albay">Albay</option>
+                        <option value="Antique">Antique</option>
+                    </select>
+                </div> 
+            </div>
+        </form>
+    </div>
+    <!-- const parents -->
+    <div class="container text12">
+        <form>
+            <h6 class="col-12 p-0 font-weight-bold mb-2">Parents</h6>
+                <div class="form-row">
+                    <div class="form-group col-md-3 c-mb-sm-1">
+                        <label for="father_name">Father's Last Name <span class="text-red"> *</span></label>
+                        <input type="text" class="check_value form-control form-control-sm border bg-white rounded-0 border-dark" id="father_name" placeholder="Enter Father's Last Name">
+                    </div>
+                    <div class="form-group col-md-3 c-mb-sm-1">
+                        <label for="father_first_name">Father's First Name <span class="text-red"> *</span></label>
+                        <input type="text" class="check_value form-control form-control-sm border bg-white rounded-0 border-dark" id="father_first_name" placeholder="Enter Father's First Name ">
+                    </div>
+                    <div class="form-group col-md-3 c-mb-sm-1">
+                        <label for="father_middle_name">Father's Middle Name <span class="text-red"> *</span></label>
+                        <input type="text" class="check_value form-control form-control-sm border bg-white rounded-0 border-dark" id="father_middle_name" placeholder="Enter Father's Middle Name">
+                    </div>
+                    <div class="form-group col-md-2 c-mb-sm-1">
+                        <label for="father_suffix" class="col-12 p-0">Suffix <span class="text-red"> *</span></label>
+                        <select id="father_suffix" class="form-control text12">
+                            <option value="none" selected>None</option>
+                            <option value="Jr">Jr</option>
+                            <option value="Sr">Sr</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group col-md-3 c-mb-sm-1">
+                        <label for="mother_name">Mother's Last Name <span class="text-red"> *</span></label>
+                        <input type="text" class=" check_value form-control form-control-sm border bg-white rounded-0 border-dark" id="mother_name" placeholder="Enter Mother's Last Name">
+                    </div>
+                    <div class="form-group col-md-3 c-mb-sm-1">
+                        <label for="mother_first_name">Mother's First Name <span class="text-red"> *</span></label>
+                        <input type="text" class="check_value form-control form-control-sm border bg-white rounded-0 border-dark" id="mother_first_name" placeholder="Enter Mother's First Name *">
+                    </div>
+                    <div class="form-group col-md-3">
+                        <label for="mother_middle_name">Mother's Middle Name <span class="text-red"> *</span></label>
+                        <input type="text" class="check_value form-control form-control-sm border bg-white rounded-0 border-dark" id="mother_middle_name" placeholder="Enter Mother's Middle Name">
+                    </div>
+                </div>
+        </form>
+    </div>
+
+    <!-- const guardian -->
+    <div class="container text12">
+        <form>
+            <h6 class="col-12 p-0 font-weight-bold mb-2">Guardian</h6>
+            <div class="form-row">
+                <div class="form-group col-md-3 c-mb-sm-1">
+                    <label for="guardian_name">Full Name of Guardian<span class="text-red"> *</span></label>
+                    <input type="text" class="check_value form-control form-control-sm border bg-white rounded-0 border-dark" id="guardian_name" placeholder="Enter Full Name of Guardian">
+                </div>
+                <div class="form-group col-md-3 c-mb-sm-1">
+                    <label for="relationship">Relationship <span class="text-red"> *</span></label>
+                    <input type="text" class="check_value form-control form-control-sm border bg-white rounded-0 border-dark" id="relationship" placeholder="Enter Home Relationship">
+                </div>
+                <div class="form-group col-md-3 ">
+                    <label for="guardian_number">Contact Number <span class="text-red"> *</span></label>
+                    <input type="number" class="check_value form-control form-control-sm border bg-white rounded-0 border-dark" id="guardian_number" placeholder="Enter Contact Number ">
+                </div>
+            </div>
+        </form>
+    </div>
+    <!-- const button -->
+    <div class="d-flex justify-content-center text12">
+        <div class=" back_to_admission back cursor-pointer border boder-0 mx-2 text-center py-1 px-3">Back</div>
+        <div class=" go_to_background back cursor-pointer border boder-0 mx-2 text-center py-1 px-3 cursor-pointer border btn-primary boder-0 mr-2 py-1 px-3">Continue</div>
+    </div>
+    <!-- var button_footer -->
+    <div class="container text12">
+        <div class="footer mt-5">
+            <hr>
+            <p class="p-5">© Philippine College of Criminology</p>
+            <hr>
+        </div>
+    </div>
+    <!-- const education_background_Tab-->
+    <div class="container tab mb-5 text12">
+        <h3 class="my-5 font-weight-bold">Student Application Form</h3>
+        <div class="row">
+            <div class="col-md-10">
+                <div class=" d-flex justify-content-center">
+                    <div class="col text-center tab-line-done">
+                        <img src="" class="icon-tab">
+                        <p class="tab_label">Admission</p>
+                    </div>
+                    <div class="col text-center tab-line-done back_to_personal_info">
+                        <img src="" class="icon-tab">
+                        <p class="tab_label">Personal Information</p>
+                    </div>
+                    <div class="col text-center tab-line-active">
+                        <img src="" class="icon-tab">
+                        <p class="tab_label">Educational Background</p>
+                    </div>
+                    <div class="col text-center tab-line">
+                        <img src="" class="icon-tab">
+                        <p class="tab_label">Confirmation</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- var education_background_header = ` -->
+    <div class="container">
+        <h5 class="headerLabel font-weight-bold">Educational Background</h5>
+    </div>
+    <!-- var education_background_pre_school-->
+    <div class="container">
+        <form>
+            <div class="preSchool text12 form-group">
+            <h6 class="inputGroup"> <b>Pre School</b> </h6>
+                <div class="custom-table my-4">
+                    <table class="">
+                        <thead class="">
+                        <tr class="tr-custom">
+                            <th class="table-school">School</th>
+                            <th>Year Started</th>
+                            <th>Year Ended</th>
+                            <th>Province</th>
+                            <th>City</th>
+                        </tr>
+                        </thead>
+                        <tbody class="hs_table_body_1">
+                        </tbody>
+                    </table>
+                </div>
+            <div class="form-row">
+                <div class="col-md-4">
+                    <label class="inputLabel" for="HsSchoolName">School Name</label>
+                    <input class="hs_get_value longInput form-control form-control-sm border bg-white rounded-0 border-dark"  type="text" id="HsSchoolName" name="psSchoolName" placeholder="Enter School Name" > </input>
+                </div>
+                <div class="col-md-2">
+                    <label class="inputLabel" for="HsYearStart">Year Started</label>
+                    <input id="HsYearStart" class="standardInput form-control form-control-sm border bg-white rounded-0 border-dark" type="date"  name="psYearStart" placeholder="Date"> </input>
+                </div>
+                <div class="col-md-2">
+                    <label class="inputLabel" for="HsYearEnd">Year End</label>
+                    <input id="HsYearEnd" max=${new Date().getFullYear() + "-12-31"} class="standardInput form-control form-control-sm border bg-white rounded-0 border-dark" type="date" name="psYearEnd" placeholder="date""> </input>
+                </div>
+                <div class="col-md-2">
+                    <label class="inputLabel" for="HsProvince">Province</label>
+                    <select id="HsProvince" class="form-control text12"name="psProvince"  >
+                        <option value="">Select province</option>
+                        <option value="Abra">Abra</option>
+                        <option value="Agusan del Norte">Agusan del Norte</option>
+                        <option value="Agusan del Sur">Agusan del Sur</option>
+                        <option value="Aklan">Aklan</option>
+                        <option value="Albay">Albay</option>
+                        <option value="Antique">Antique</option>
+                    </select>
+                </div>
+    
+                <div class="col-md-2">
+                    <label class="inputLabel" for="HsCity">City</label>
+                    <select id="HsCity" class="form-control text12" name="psCity" >
+                        <option value="">Select City</option>
+                        <option value="Angeles">Angeles</option>
+                        <option value="Bacolod">Bacolod</option>
+                        <option value="Baguio">Baguio</option>
+                        <option value="Butuan">Butuan</option>
+                        <option value="Cagayan de Oro">Cagayan de Oro</option>
+                        <option value="Caloocan">Caloocan</option>
+                        <option value="Angeles">Cebu City</option>
+                        <option value="Bacolod">Davao City</option>
+                    </select>
+                </div>
+                <div class="p-2">
+                    <div id="hs_add_button" class="cursor-pointer border rounded-0 py-1 px-3 border-dark">+ Add School</div>
+                </div>
+            </div>
+        </form>
+    </div>
+     <!-- var education_background_pre_school2 = ` -->
+    <div class="container">
+        <form>
+            <div class="preSchool text12 form-group">
+            <h6 class="inputGroup"> <b>Grade School</b> </h6>
+                <div class="custom-table my-4">
+                    <table class="">
+                        <thead class="">
+                        <tr class="tr-custom">
+                            <th class="table-school">School</th>
+                            <th>Year Started</th>
+                            <th>Year Ended</th>
+                            <th>Province</th>
+                            <th>City</th>
+                        </tr>
+                        </thead>
+                        <tbody class="hs_table_body_2">  
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="form-row">
+                        <div class="col-md-4">
+                            <label class="inputLabel" for="GsSchoolName">School Name<span class="text-red"> *</span></label>
+                            <input class="gs_get_value longInput form-control form-control-sm border bg-white rounded-0 border-dark"  type="text" id="GsSchoolName" name="GsSchoolName" placeholder="Enter School Name"> </input>
+                        </div>
+    
+                        <div class="col-md-2">
+                            <label class="inputLabel" for="GsYearStart">Year Started<span class="text-red"> *</span></label>
+                            <input id="GsYearStart" class="standardInput form-control form-control-sm border bg-white rounded-0 border-dark" type="date"  name="GsYearStart" placeholder="Date"> </input>
+                        </div>
+    
+                        <div class="col-md-2">
+                            <label class="inputLabel" for="GsYearEnd">Year End<span class="text-red"> *</span></label>
+                            <input id="GsYearEnd" max=${new Date().getFullYear() + "-12-31"} class="standardInput form-control form-control-sm border bg-white rounded-0 border-dark" type="date" name="GsYearEnd" placeholder="date"> </input>
+                        </div>
+    
+                        <div class="col-md-2">
+                            <label class="inputLabel" for="GsProvince">Province<span class="text-red"> *</span></label>
+                            <select id="GsProvince" class="form-control text12" name="GsProvince" >
+                                <option value="">Select province</option>
+                                <option value="Abra">Abra</option>
+                                <option value="Agusan del Norte">Agusan del Norte</option>
+                                <option value="Agusan del Sur">Agusan del Sur</option>
+                                <option value="Aklan">Aklan</option>
+                                <option value="Albay">Albay</option>
+                                <option value="Antique">Antique</option>
+                            </select>
+                        </div>
+    
+                        <div class="col-md-2">
+                            <label class="inputLabel" for="GsCity">City<span class="text-red"> *</span></label>
+                            <select id="GsCity" class="form-control text12" name="GsCity" >
+                                <option value="">Select City</option>
+                                <option value="Angeles">Angeles</option>
+                                <option value="Bacolod">Bacolod</option>
+                                <option value="Baguio">Baguio</option>
+                                <option value="Butuan">Butuan</option>
+                                <option value="Cagayan de Oro">Cagayan de Oro</option>
+                                <option value="Caloocan">Caloocan</option>
+                                <option value="Angeles">Cebu City</option>
+                                <option value="Bacolod">Davao City</option>
+                            </select>
+                        </div>
+                        <div class="p-2">
+                            <div id="gs_add_button" class="cursor-pointer border rounded-0 py-1 px-3 border-dark">+ Add School</div>
+                        </div>
+                    </div>
+            </div>
+        </form>
+    </div>
+    <!-- var education_button_footer = ` -->
+    <div class="container text12">
+        <div class="d-flex justify-content-center">
+            <div  class="back cursor-pointer border boder-0 mx-2 py-1 px-3 back_to_personal_info">Back</div>
+            <div class=" continue_to_confirmation continue cursor-pointer border btn-primary boder-0 mr-2 py-1 px-3">Continue</div>
+        </div>
+    </div>
+    <!-- var college_education_background_header = ` -->
+    <div class="container">
+        <h5 class="headerLabel font-weight-bold">Educational Background</h5>
+        <p class="text-red text-10">*Required Fields</p> 
+    </div>
+    <!-- var college_education_background_pre_school = ` -->
+    <div class="container">
+        <form>
+            <div class="preSchool text12 form-group">
+                <h6 class="inputGroup"> <b>Pre-School</b> </h6>
+                <div class="custom-table my-4">
+                    <table>
+                        <tr class="tr-custom">
+                            <th class="table-school">School</th>
+                            <th>Year Started</th>
+                            <th>Year Ended</th>
+                            <th>Province</th>
+                            <th>City</th>
+                        </tr>
+                        <tr>
+                            <td>Alfreds Futterkiste</td>
+                            <td class="border-black">Maria Anders</td>
+                            <td>Germany</td>
+                            <td>Maria Anders</td>
+                            <td>Germany</td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="form-row">
+                    <div class="col-md-4">
+                        <label class="inputLabel" for="psSchoolName">School Name<span class="text-red"> *</span></label>
+                        <input class="longInput form-control form-control-sm border bg-white rounded-0 border-dark"  type="text" id="psSchoolName" name="psSchoolName" placeholder="Enter School Name"> </input>
+                    </div>
+
+                    <div class="col-md-2">
+                        <label class="inputLabel" for="psYearStart">Year Started<span class="text-red"> *</span></label>
+                        <input class="standardInput form-control form-control-sm border bg-white rounded-0 border-dark" type="date" id="psYearStart" name="psYearStart" placeholder="Date"> </input>
+                    </div>
+
+                    <div class="col-md-2">
+                        <label class="inputLabel" for="psYearEnd">Year End<span class="text-red"> *</span></label>
+                        <input class="standardInput form-control form-control-sm border bg-white rounded-0 border-dark" type="date" id="psYearEnd" name="psYearEnd" placeholder="date""> </input>
+                    </div>
+
+                    <div class="col-md-2">
+                        <label class="inputLabel" for="psProvince">Province<span class="text-red"> *</span></label>
+                        <select class="form-control text12" name="psProvince" id="psProvince" >
+                            <option>Select province</option>
+                            <option>Choice 1</option>
+                            <option>Choice 2</option>
+                        </select>
+                    </div>
+
+                    <div class="col-md-2">
+                        <label class="inputLabel" for="psCity">City<span class="text-red"> *</span></label>
+                        <select class="form-control text12" name="psCity" id="psCity" >
+                            <option>Select City</option>
+                            <option>Choice 1</option>
+                            <option>Choice 2</option>
+                        </select>
+                    </div>
+                    <div class="p-2">
+                        <div class="cursor-pointer border rounded-0 py-1 px-3 border-dark">+ Add School</div>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+    <!-- var college_education_background_year_school = ` -->
+    <div class="container">
+        <form>
+            <div class="preSchool text12 form-group">
+            <h6 class="inputGroup"> <b>Grade School</b> </h6>
+                <div class="custom-table my-4">
+                    <table>
+                        <tr class="tr-custom">
+                            <th class="table-school">School</th>
+                            <th>Year Started</th>
+                            <th>Year Ended</th>
+                            <th>Province</th>
+                            <th>City</th>
+                        </tr>
+                        <tr>
+                            <td>Alfreds Futterkiste</td>
+                            <td class="border-black">Maria Anders</td>
+                            <td>Germany</td>
+                            <td>Maria Anders</td>
+                            <td>Germany</td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="form-row">
+                    <div class="col-md-4">
+                        <label class="inputLabel" for="psSchoolName">School Name<span class="text-red"> *</span></label>
+                        <input class="longInput form-control form-control-sm border bg-white rounded-0 border-dark"  type="text" id="psSchoolName" name="psSchoolName" placeholder="Enter School Name"> </input>
+                    </div>
+
+                    <div class="col-md-2">
+                        <label class="inputLabel" for="psYearStart">Year Started<span class="text-red"> *</span></label>
+                        <input class="standardInput form-control form-control-sm border bg-white rounded-0 border-dark" type="date" id="psYearStart" name="psYearStart" placeholder="Date"> </input>
+                    </div>
+
+                    <div class="col-md-2">
+                        <label class="inputLabel" for="psYearEnd">Year End<span class="text-red"> *</span></label>
+                        <input class="standardInput form-control form-control-sm border bg-white rounded-0 border-dark" type="date" id="psYearEnd" name="psYearEnd" placeholder="date""> </input>
+                    </div>
+
+                    <div class="col-md-2">
+                        <label class="inputLabel" for="psProvince">Province<span class="text-red"> *</span></label>
+                        <select class="form-control text12" name="psProvince" id="psProvince" >
+                            <option>Select province</option>
+                            <option>Choice 1</option>
+                            <option>Choice 2</option>
+                        </select>
+                    </div>
+
+                    <div class="col-md-2">
+                        <label class="inputLabel" for="psCity">City<span class="text-red"> *</span></label>
+                        <select class="form-control text12" name="psCity" id="psCity" >
+                            <option>Select City</option>
+                            <option>Choice 1</option>
+                            <option>Choice 2</option>
+                        </select>
+                    </div>
+                    <div class="p-2">
+                        <div class="cursor-pointer border rounded-0 py-1 px-3 border-dark">+ Add School</div>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+        
+    <!-- var college_education_background_junior_higjschool = ` -->
+    <div class="container">
+        <form>
+            <div class="preSchool text12 form-group">
+                <h6 class="inputGroup"> <b>Junior High School</b> </h6>
+                <div class="custom-table my-4">
+                    <table>
+                        <tr class="tr-custom">
+                        <th class="table-school">School</th>
+                        <th>Year Started</th>
+                        <th>Year Ended</th>
+                        <th>Province</th>
+                        <th>City</th>
+                        </tr>
+                        <tr>
+                            <td>Alfreds Futterkiste</td>
+                            <td class="border-black">Maria Anders</td>
+                            <td>Germany</td>
+                            <td>Maria Anders</td>
+                            <td>Germany</td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="form-row">
+                    <div class="col-md-4">
+                        <label class="inputLabel" for="psSchoolName">School Name<span class="text-red"> *</span></label>
+                        <input class="longInput form-control form-control-sm border bg-white rounded-0 border-dark"  type="text" id="psSchoolName" name="psSchoolName" placeholder="Enter School Name"> </input>
+                    </div>
+    
+                    <div class="col-md-2">
+                        <label class="inputLabel" for="psYearStart">Year Started<span class="text-red"> *</span></label>
+                        <input class="standardInput form-control form-control-sm border bg-white rounded-0 border-dark" type="date" id="psYearStart" name="psYearStart" placeholder="Date"> </input>
+                    </div>
+    
+                    <div class="col-md-2">
+                        <label class="inputLabel" for="psYearEnd">Year End<span class="text-red"> *</span></label>
+                        <input class="standardInput form-control form-control-sm border bg-white rounded-0 border-dark" type="date" id="psYearEnd" name="psYearEnd" placeholder="date""> </input>
+                    </div>
+    
+                    <div class="col-md-2">
+                        <label class="inputLabel" for="psProvince">Province<span class="text-red"> *</span></label>
+                        <select class="form-control text12" name="psProvince" id="psProvince" >
+                            <option>Select province</option>
+                            <option>Choice 1</option>
+                            <option>Choice 2</option>
+                        </select>
+                    </div>
+    
+                    <div class="col-md-2">
+                        <label class="inputLabel" for="psCity">City<span class="text-red"> *</span></label>
+                        <select class="form-control text12" name="psCity" id="psCity" >
+                            <option>Select City</option>
+                            <option>Choice 1</option>
+                            <option>Choice 2</option>
+                        </select>
+                    </div>
+                    <div class="p-2">
+                        <div class="cursor-pointer border rounded-0 py-1 px-3 border-dark">+ Add School</div>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+    <!-- var college_education_background_senior_highschool = ` -->
+    <div class="container">
+        <form>
+            <div class="preSchool text12 form-group">
+                <h6 class="inputGroup"> <b>Senior High School</b> </h6>
+                <div class="custom-table my-4">
+                    <table>
+                        <tr class="tr-custom">
+                            <th class="table-school">School</th>
+                            <th>Year Started</th>
+                            <th>Year Ended</th>
+                            <th>Province</th>
+                            <th>City</th>
+                        </tr>
+                        <tr>
+                            <td>Alfreds Futterkiste</td>
+                            <td class="border-black">Maria Anders</td>
+                            <td>Germany</td>
+                            <td>Maria Anders</td>
+                            <td>Germany</td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="form-row">
+                    <div class="col-md-4">
+                        <label class="inputLabel" for="psSchoolName">School Name<span class="text-red"> *</span></label>
+                        <input class="longInput form-control form-control-sm border bg-white rounded-0 border-dark"  type="text" id="psSchoolName" name="psSchoolName" placeholder="Enter School Name"> </input>
+                    </div>
+    
+                    <div class="col-md-2">
+                        <label class="inputLabel" for="psYearStart">Year Started<span class="text-red"> *</span></label>
+                        <input class="standardInput form-control form-control-sm border bg-white rounded-0 border-dark" type="date" id="psYearStart" name="psYearStart" placeholder="Date"> </input>
+                    </div>
+    
+                    <div class="col-md-2">
+                        <label class="inputLabel" for="psYearEnd">Year End<span class="text-red"> *</span></label>
+                        <input class="standardInput form-control form-control-sm border bg-white rounded-0 border-dark" type="date" id="psYearEnd" name="psYearEnd" placeholder="date""> </input>
+                    </div>
+    
+                    <div class="col-md-2">
+                        <label class="inputLabel" for="psProvince">Province<span class="text-red"> *</span></label>
+                        <select class="form-control text12" name="psProvince" id="psProvince" >
+                            <option>Select province</option>
+                            <option>Choice 1</option>
+                            <option>Choice 2</option>
+                        </select>
+                    </div>
+    
+                    <div class="col-md-2">
+                        <label class="inputLabel" for="psCity">City<span class="text-red"> *</span></label>
+                        <select class="form-control text12" name="psCity" id="psCity" >
+                            <option>Select City</option>
+                            <option>Choice 1</option>
+                            <option>Choice 2</option>
+                        </select>
+                    </div>
+                    <div class="p-2">
+                        <div class="cursor-pointer border rounded-0 py-1 px-3 border-dark">+ Add School</div>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+    <!-- var college_education_background_button_footer = ` -->
+    <div class="container text12">
+        <div class="d-flex justify-content-center">
+            <div class="back_to_personal_info back cursor-pointer border boder-0 mx-2 py-1 px-3">Back</div>
+            <div class="continue continue_to_confirmation cursor-pointer border btn-primary boder-0 mr-2 py-1 px-3">Continue</div>
+        </div>
+    </div>
+        
+    
+        
+       
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="./index.js"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  </body>
+</html>
